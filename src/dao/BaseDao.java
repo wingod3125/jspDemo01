@@ -24,7 +24,7 @@ public class BaseDao {
         try {
             // 初始化上下文
             Context ct = new InitialContext();
-            // 通过上下文对象获取连接池的数据对象
+            // 通过上下文对象获取连接池的数据对象,注意：java:comp/env/是固定的写法
             DataSource ds = (DataSource) ct.lookup("java:comp/env/conn1219");
             // 从连接池中取出一个连接对象
             conn = ds.getConnection();
